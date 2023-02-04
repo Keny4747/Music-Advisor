@@ -5,8 +5,11 @@ public enum MenuOpt {
         FEATURED("featured"),
         CATEGORIES("categories"),
         MOOD("playlists Mood"),
-        EXIT("exit");
-        String value;
+        EXIT("exit"),
+        AUTH("auth"),
+        DEFAULT("");
+
+        final String value;
         MenuOpt(String value){
             this.value = value;
         }

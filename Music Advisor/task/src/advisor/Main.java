@@ -1,44 +1,68 @@
 package advisor;
+
+import java.net.URI;
 import java.util.Scanner;
-public class Main {
-    public final Scanner scanner = new Scanner(System.in);
-    private MusicService service = new MusicService();
+
+public class Main{
+    private static final String clientId = "a19ee7dbfda443b2a8150c9101bfd645";
+    private static final String redirectUri = "http://localhost:8080";
+    private static boolean accessGranted = false;
+
     public static void main(String[] args) {
-        Main main = new Main();
-        String input;
+        Scanner input = new Scanner(System.in);
+        while (true) {
 
-        do{
-            input=main.userInput();
-            main.menu(input);
-        }while(!input.equals("exit"));
-        main.messageExit();
-
-    }
-    public String userInput(){
-        return scanner.nextLine();
-    }
-    public void menu(String userInput){
-        MenuOpt opt = Util.option(userInput);
-        switch (opt){
-            case NEW -> newReleases();
-            case FEATURED ->featured();
-            case CATEGORIES -> categories();
-            case MOOD -> moodPlaylists();
+            String command = input.nextLine();
+            switch (command) {
+                case "auth":
+                    auth();
+                    break;
+                case "new":
+                    if (accessGranted) {
+                        newReleases();
+                    } else {
+                        System.out.println("Please, provide access for application.");
+                    }
+                    break;
+                case "featured":
+                    if (accessGranted) {
+                        featured();
+                    } else {
+                        System.out.println("Please, provide access for application.");
+                    }
+                    break;
+                case "categories":
+                    if (accessGranted) {
+                        categories();
+                    } else {
+                        System.out.println("Please, provide access for application.");
+                    }
+                    break;
+                case "exit":
+                    System.out.println("---GOODBYE!---");
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid command.");
+            }
         }
     }
-    public void messageExit(){
-        System.out.println("---GOODBYE!---");
+
+    private static void auth() {
+        URI authorizationUri = URI.create("https://accounts.spotify.com/authorize?client_id=" + clientId + "&redirect_uri=" + redirectUri + "&response_type=code");
+        System.out.println(authorizationUri.toString());
+        System.out.println("---SUCCESS---");
+        accessGranted = true;
     }
-    public void newReleases(){
-        StringBuilder release= new StringBuilder();
-        release
-                .append("Mountains [Sia, Diplo, Labrinth]\n")
-                .append("Runaway [Lil Peep]\n")
-                .append("The Greatest Show [Panic! At The Disco]\n")
-                .append("All Out Life [Slipknot]\n");
-        System.out.printf("---NEW RELEASES---%n%s",release);
+
+    private static void newReleases() {
+        System.out.println("---NEW RELEASES---");
+        System.out.println("Mountains [Sia, Diplo, Labrinth]");
+        System.out.println("Runaway [Lil Peep]");
+        System.out.println("The Greatest Show [Panic! At The Disco]");
+        System.out.println("All Out Life [Slipknot]");
     }
-    public void featured(){
+
+    private static void featured(){
         StringBuilder featured= new StringBuilder();
         featured
                 .append("Mellow Morning\n")
@@ -48,7 +72,7 @@ public class Main {
         System.out.printf("---FEATURED---%n%s",featured);
     }
 
-    public void categories(){
+    private static void categories(){
         StringBuilder categorie= new StringBuilder();
         categorie
                 .append("Top Lists\n")
@@ -58,7 +82,7 @@ public class Main {
         System.out.printf("---CATEGORIES---%n%s",categorie);
     }
 
-    public void moodPlaylists(){
+    private static void moodPlaylists(){
         StringBuilder playlists= new StringBuilder();
         playlists
                 .append("Walk Like A Badass \n")
@@ -68,3 +92,7 @@ public class Main {
         System.out.printf("---MOOD PLAYLISTS---%n%s",playlists);
     }
 }
+
+
+
+

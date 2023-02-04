@@ -9,6 +9,11 @@
       <module name="Music_Advisor.Music_Advisor-task-build-test-results.main" target="16" />
       <module name="Music_Advisor.Music_Advisor-task-build-tmp.main" target="16" />
       <module name="Music_Advisor.Music_Advisor-task.main" target="16" />
+      <module name="Music_Advisor.Topics-Decorator-Breakfast_Decorator.main" target="16" />
+      <module name="Music_Advisor.Topics-Decorator-Coffee_Decorator.main" target="16" />
+      <module name="Music_Advisor.Topics-Decorator-Disadvantages.main" target="16" />
+      <module name="Music_Advisor.Topics-Decorator-Pizza_Decorator.main" target="16" />
+      <module name="Music_Advisor.Topics-Decorator-Theory.main" target="16" />
       <module name="Music_Advisor.util.main" target="16" />
     </bytecodeTargetLevel>
   </component>

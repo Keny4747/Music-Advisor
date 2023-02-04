@@ -16,7 +16,15 @@ public class Util {
             case "playlists Mood" -> {
                 return MenuOpt.MOOD;
             }
-            default -> {return MenuOpt.EXIT;}
+            case "auth"->{
+                return MenuOpt.AUTH;
+            }
+            case "exit"->{
+                return MenuOpt.EXIT;
+            }
+            default -> {
+                return MenuOpt.DEFAULT;
+            }
         }
 
     }
