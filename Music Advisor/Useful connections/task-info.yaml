@@ -310,12 +310,8 @@ files:
   visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/learn/step/5479#comment
-status: Failed
+status: Solved
 feedback:
-  message: |-
-    Error in test #1
-
-    There are 2 classes with main method: advisor.Main, advisor.MusicService.
-    Leave only one of them to be executed.
-  time: "Sun, 05 Feb 2023 22:02:40 UTC"
+  message: Congratulations!
+  time: "Sun, 05 Feb 2023 22:14:56 UTC"
 record: -1
