@@ -47,7 +47,7 @@ public class Authorisation {
                                 System.out.println("code received");
                                 request = "Got the code. Return back to your program.";
                             } else {
-                                request = "Not found authorization code. Try again.";
+                                request = "Authorization code not found. Try again.";
                             }
                             exchange.sendResponseHeaders(200, request.length());
                             exchange.getResponseBody().write(request.getBytes());
