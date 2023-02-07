@@ -15,7 +15,7 @@ import java.net.http.HttpResponse;
 
 public class Authorisation {
     public static String REDIRECT_URI = "http://localhost:8080";
-    public static String CLIENT_ID = "205e2593b3e34f60ab96ce16eedadfbc";
+    public static String CLIENT_ID = "67da7afe4b20443ca01445b1a0a75d6b";
     public static String CLIENT_SECRET = "6f5efccb851c4b0eb547443ee7de94ec";
     public static String ACCESS_TOKEN = "";
     public static String ACCESS_CODE = "";
@@ -47,7 +47,7 @@ public class Authorisation {
                                 System.out.println("code received");
                                 request = "Got the code. Return back to your program.";
                             } else {
-                                request = "Authorization code not found. Try again.";
+                                request = "Not found authorization code. Try again.";
                             }
                             exchange.sendResponseHeaders(200, request.length());
                             exchange.getResponseBody().write(request.getBytes());

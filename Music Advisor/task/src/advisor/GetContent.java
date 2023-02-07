@@ -60,7 +60,7 @@ public class GetContent {
 
         StringBuilder result = new StringBuilder();
         for (Info each : infos) {
-            result.append(each.categories).append("\n");
+            result.append(each.categories).append("\n").append("\n");;
         }
         return result.toString();
     }
