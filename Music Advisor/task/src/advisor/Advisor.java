@@ -10,7 +10,8 @@ public class Advisor {
         PrintPage printPage = new PrintPage(Main.PAGE);
         Scanner scanner = new Scanner(System.in);
         String[] query = scanner.nextLine().split(" ");
-        while (!query[0].equals("exit")) {
+
+        while (true) {
             switch (query[0]) {
                 case ("auth"):
                     service.setAuthorization();

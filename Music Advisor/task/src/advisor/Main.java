@@ -4,6 +4,7 @@ import java.net.URI;
 import java.util.Scanner;
 
 public class Main{
+
     static String SERVER_PATH; // path to the server to connect
     static String RESOURCE;    // path to the api
     static int PAGE;           // number of objects on the output page
